@@ -229,7 +229,7 @@ See [plugins/olm/README.md](plugins/olm/README.md) for detailed documentation.
 OpenShift development utilities and helpers
 
 **Commands:**
-- **`/openshift:bootstrap-om` `""`** - Bootstrap OpenShift Manager (OM) integration for OpenShift operators with automated resource discovery
+- **`/openshift:bootstrap-om`** - Bootstrap OpenShift Manager (OM) integration for OpenShift operators with automated resource discovery
 - **`/openshift:bump-deps` `<dependency> [version] [--create-jira] [--create-pr]`** - Bump dependencies in OpenShift projects with automated analysis and PR creation
 - **`/openshift:cluster-health-check` `[--verbose] [--output-format]`** - Perform comprehensive health check on OpenShift cluster and report issues
 - **`/openshift:crd-review` `[repository-path]`** - Review Kubernetes CRDs against Kubernetes and OpenShift API conventions
@@ -240,6 +240,7 @@ OpenShift development utilities and helpers
 - **`/openshift:new-e2e-test` `[test-specification]`** - Write and validate new OpenShift E2E tests using Ginkgo framework
 - **`/openshift:rebase` `<tag>`** - Rebase OpenShift fork of an upstream repository to a new upstream release.
 - **`/openshift:review-test-cases` `[file-path-or-test-code-or-commands]`** - Review test cases for completeness, quality, and best practices - accepts file path or direct oc commands/test code
+- **`/openshift:visualize-gateway-topology`** - Generate and visualize Kubernetes Gateway API topology diagram
 - **`/openshift:visualize-ovn-topology`** - Generate and visualize OVN-Kubernetes network topology diagram
 
 See [plugins/openshift/README.md](plugins/openshift/README.md) for detailed documentation.
