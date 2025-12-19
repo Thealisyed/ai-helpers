@@ -25,6 +25,7 @@ This document lists all available Claude Code plugins and their commands in the 
 - [Session](#session-plugin)
 - [Sosreport](#sosreport-plugin)
 - [Utils](#utils-plugin)
+- [Workspaces](#workspaces-plugin)
 - [Yaml](#yaml-plugin)
 
 ### Agendas Plugin
@@ -297,6 +298,16 @@ A generic utilities plugin serving as a catch-all for various helper commands an
 - **`/utils:process-renovate-pr` `<PR_NUMBER|open> [JIRA_PROJECT] [COMPONENT]`** - Process Renovate dependency PR(s) to meet repository contribution standards
 
 See [plugins/utils/README.md](plugins/utils/README.md) for detailed documentation.
+
+### Workspaces Plugin
+
+Manage isolated git worktree workspaces for multi-repo development
+
+**Commands:**
+- **`/workspaces:create` `<short-description> <repo1|url> [repo2...]`** - Create a workspace with git worktrees for multi-repository development
+- **`/workspaces:delete` `<workspace-name>`** - Delete a workspace and its git worktrees
+
+See [plugins/workspaces/README.md](plugins/workspaces/README.md) for detailed documentation.
 
 ### Yaml Plugin
 
