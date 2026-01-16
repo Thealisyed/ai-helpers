@@ -70,7 +70,7 @@
           "name": "Suggest Reviewers Helper"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -207,6 +207,11 @@
           "name": "Jira Pull Request Extractor"
         },
         {
+          "description": "GCP HCP team-specific Jira requirements for creating issues in the GCP project (Hypershift on GKE)",
+          "id": "gcp-hcp",
+          "name": "GCP HCP Jira Conventions"
+        },
+        {
           "description": "HyperShift team-specific Jira requirements for component selection and conventions",
           "id": "hypershift",
           "name": "HyperShift Jira Conventions"
@@ -227,7 +232,7 @@
           "name": "OCPBUGS Jira Conventions"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.4"
     },
     {
       "commands": [
@@ -291,7 +296,7 @@
           "name": "OC Authentication Helper"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -368,7 +373,7 @@
           "name": "Summarize JIRAs"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -384,7 +389,7 @@
       "hooks": [],
       "name": "doc",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -400,7 +405,7 @@
       "hooks": [],
       "name": "session",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -448,7 +453,7 @@
           "name": "System Configuration Analysis"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -493,6 +498,12 @@
           "description": "Review potential overlaps with existing ai-helpers (Claude Code Plugins, Commands, Skills, Sub-agents, or Hooks) and open PRs",
           "name": "review-ai-helpers-overlap",
           "synopsis": "/utils:review-ai-helpers-overlap [--idea \"description\"] [--pr NUMBER] [--verbose]"
+        },
+        {
+          "argument_hint": "[file-paths-or-patterns]",
+          "description": "Orchestrate security scanners and provide contextual triage of findings",
+          "name": "review-security",
+          "synopsis": "/utils:review-security [file-paths-or-patterns]"
         }
       ],
       "description": "A generic utilities plugin serving as a catch-all for various helper commands",
@@ -500,7 +511,7 @@
       "hooks": [],
       "name": "utils",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.3"
     },
     {
       "commands": [
@@ -636,7 +647,7 @@
           "name": "Prow Job Extract Must-Gather"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -652,7 +663,7 @@
       "hooks": [],
       "name": "agendas",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -757,7 +768,7 @@
           "name": "generating-ovn-topology"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -779,7 +790,7 @@
       "hooks": [],
       "name": "etcd",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -795,7 +806,7 @@
       "hooks": [],
       "name": "yaml",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -829,7 +840,7 @@
           "name": "Must-Gather Analyzer"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -876,7 +887,7 @@
       ],
       "name": "metrics",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -929,7 +940,7 @@
           "name": "HyperShift PowerVS Provider"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -945,7 +956,40 @@
       "hooks": [],
       "name": "compliance",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
+    },
+    {
+      "commands": [
+        {
+          "argument_hint": "<path-or-url> [--output <path>] [--priority <level>] [--test-structure-only]",
+          "description": "Analyze test code structure without running tests to identify coverage gaps",
+          "name": "analyze",
+          "synopsis": "/test-coverage:analyze <path-or-url> [--output <path>] [--priority <level>] [--test-structure-only]"
+        },
+        {
+          "argument_hint": "<test-file-or-url> [--output <path>]",
+          "description": "Identify E2E test scenario gaps in OpenShift/Kubernetes tests (component-agnostic)",
+          "name": "gaps",
+          "synopsis": "bash"
+        }
+      ],
+      "description": "Analyze test coverage and identify gaps in test scenarios",
+      "has_readme": true,
+      "hooks": [],
+      "name": "test-coverage",
+      "skills": [
+        {
+          "description": "Analyze test code structure directly to provide coverage analysis",
+          "id": "analyze",
+          "name": "Test Structure Analysis"
+        },
+        {
+          "description": "Intelligently identify missing test coverage based on component type",
+          "id": "gaps",
+          "name": "Component-Aware Test Gap Analysis"
+        }
+      ],
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -989,7 +1033,7 @@
       "hooks": [],
       "name": "origin",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -1017,7 +1061,7 @@
       "hooks": [],
       "name": "container-image",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -1033,7 +1077,7 @@
       "hooks": [],
       "name": "node",
       "skills": [],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
@@ -1055,7 +1099,7 @@
           "name": "Analyze BigQuery Usage"
         }
       ],
-      "version": "0.0.1"
+      "version": "0.0.2"
     },
     {
       "commands": [
